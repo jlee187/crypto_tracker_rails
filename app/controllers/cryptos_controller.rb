@@ -17,7 +17,7 @@ class CryptosController < ProtectedController
 
   # POST /cryptos
   def create
-    @crypto = current_user.cryptos.build(person_params)
+    @crypto = current_user.cryptos.build(crypto_params)
 
     if @crypto.save
       render json: @crypto, status: :created, location: @crypto
